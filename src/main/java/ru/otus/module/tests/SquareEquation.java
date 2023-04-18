@@ -14,6 +14,11 @@ public class SquareEquation {
         double discr = b * b - 4 * a * c;
         if (discr < 0) {
             return new double[0];
+        } else if (discr > 0) {
+            double [] result = new double[2];
+            result[0] = (-b + Math.sqrt(discr)) / (2 * a);
+            result[1] = (-b - Math.sqrt(discr)) / (2 * a);
+            return result;
         }
         return new double[1];
     }
