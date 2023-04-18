@@ -10,6 +10,10 @@ package ru.otus.module.tests;
 public class SquareEquation {
 
     public double[] solve(double a, double b, double c) {
+        double discr = b * b - 4 * a * c;
+        if (discr < 0) {
+            return new double[0];
+        }
         return new double[1];
     }
 }

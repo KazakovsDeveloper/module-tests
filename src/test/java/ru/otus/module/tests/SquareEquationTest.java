@@ -4,11 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.OptionalDouble;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class SquareEquationTest {
 
@@ -28,9 +24,9 @@ class SquareEquationTest {
     @DisplayName("x^2+1 = 0 корней нет")
     public void solveTestEquationHasNotRoots() {
 
-        double a = 0;
+        double a = 1;
 
-        double b = 2;
+        double b = 0;
 
         double c = 3;
 
