@@ -9,6 +9,7 @@ package ru.otus.module.tests;
 
 public class SquareEquation {
 
+    //ax2 + bx + c = 0
     public double[] solve(double a, double b, double c) {
         double discr = b * b - 4 * a * c;
         if (discr < 0) {
