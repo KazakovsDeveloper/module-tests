@@ -4,8 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SquareEquationTest {
 
@@ -74,11 +73,33 @@ class SquareEquationTest {
 
         double c = 1;
 
-        double [] expected = {-1.0, -1.0};
+        double[] expected = {-1.0, -1.0};
 
         double[] result = squareEquation.solve(a, b, c);
 
         assertArrayEquals(expected, result);
+    }
+
+    /**
+     * Написать тест, который проверяет, что коэффициент a не может быть равен 0.
+     * В этом случае solve выбрасывает исключение.
+     * Примечание. Учесть, что a имеет тип double и сравнивать с 0 через == нельзя.
+     * Написать минимальную реализацию функции solve, которая удовлетворяет тесту из п.9.
+     */
+
+    @Test
+    @DisplayName("коэффициент a не может быть равен 0")
+    public void solveTestCoefficientACanNotEquals0() {
+
+        double a = 0;
+
+        double b = 2;
+
+        double c = 1;
+
+        assertThrows(RuntimeException.class, () -> {
+            squareEquation.solve(a, b, c);
+        });
     }
 
 }
