@@ -3,6 +3,8 @@ package ru.otus.module.tests;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -100,6 +102,20 @@ class SquareEquationTest {
         assertThrows(RuntimeException.class, () -> {
             squareEquation.solve(a, b, c);
         });
+    }
+
+    /**
+     * Посмотреть какие еще значения могут принимать числа типа double, кроме числовых и написать тест с их использованием на все коэффициенты.
+     * solve должен выбрасывать исключение.
+     * Написать минимальную реализацию функции solve, которая удовлетворяет тесту из п.13.
+     */
+
+    @ParameterizedTest
+    @DisplayName("какие еще значения могут принимать числа типа double")
+    @ValueSource(doubles = {Double.NaN, Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY})
+    void solveTestCoefficientCanNotEqualsNanOrInfinity(double d) {
+
+        assertThrows(RuntimeException.class, () -> squareEquation.solve(d, d, d));
     }
 
 }
