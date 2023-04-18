@@ -12,14 +12,17 @@ public class SquareEquation {
     //ax2 + bx + c = 0
     public double[] solve(double a, double b, double c) {
         double discr = b * b - 4 * a * c;
+        double[] result = new double[2];
         if (discr < 0) {
             return new double[0];
         } else if (discr > 0) {
-            double [] result = new double[2];
             result[0] = (-b + Math.sqrt(discr)) / (2 * a);
             result[1] = (-b - Math.sqrt(discr)) / (2 * a);
             return result;
+        } else {
+            result[0] = -b / (2 * a);
+            result[1] = result[0];
+            return result;
         }
-        return new double[1];
     }
 }
