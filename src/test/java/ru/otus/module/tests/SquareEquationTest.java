@@ -59,4 +59,26 @@ class SquareEquationTest {
         assertArrayEquals(expected, result);
     }
 
+    /**
+     * Написать тест, который проверяет, что для уравнения x^2+2x+1 = 0 есть один корень кратности 2 (x1= x2 = -1).
+     * Написать минимальную реализацию функции solve, которая удовлетворяет тесту из п.7.
+     */
+
+    @Test
+    @DisplayName("x^2+2x+1 = 0 есть один корень кратности 2 (x1= x2 = -1)")
+    public void solveTestEquationHasOneRoot() {
+
+        double a = 1;
+
+        double b = 2;
+
+        double c = 1;
+
+        double [] expected = {-1.0, -1.0};
+
+        double[] result = squareEquation.solve(a, b, c);
+
+        assertArrayEquals(expected, result);
+    }
+
 }
